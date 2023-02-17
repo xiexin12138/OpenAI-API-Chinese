@@ -222,7 +222,7 @@ temperature 采样的另一种替代方案，被称为核采样( nucleus samplin
 ---
 
 **user**
-<span style='color:#8e8ea0;font-size:13px;margin-left:10px'>map</span>
+<span style='color:#8e8ea0;font-size:13px;margin-left:10px'>string</span>
 <span style='color:#8e8ea0;font-size:13px;margin-left:10px'>可选的</span>
 
 代表最终用户的唯一标识，用来帮助 OpenAI 监控并检测滥用。[了解更多](https://platform.openai.com/docs/guides/safety-best-practices/end-user-ids)
@@ -238,11 +238,11 @@ temperature 采样的另一种替代方案，被称为核采样( nucleus samplin
 
 提供一个提示 和/或 一个输入图像，模型会生成一个新的图像。
 
-相关指引：[图像生成](../%E6%8C%87%E5%BC%95.md)
+相关指引：[图像生成](../%E6%8C%87%E5%BC%95.md#图像生成)
 
 ---
 
-## 生成图像 <span style="font-weight: bold;font-size: 12px;line-height: 13px;background: #d2f4d3;color: #1a7f64;padding: 2px 4px 1px;border-radius: 3px;white-space: nowrap;display: inline-block;vertical-align: middle;margin-left: 12px;">测试</span>
+## 图像生成 <span style="font-weight: bold;font-size: 12px;line-height: 13px;background: #d2f4d3;color: #1a7f64;padding: 2px 4px 1px;border-radius: 3px;white-space: nowrap;display: inline-block;vertical-align: middle;margin-left: 12px;">测试</span>
 
 `POST https://api.openai.com/v1/images/generations`
 
@@ -325,7 +325,7 @@ openai.Image.create(
 ---
 
 **user**
-<span style='color:#8e8ea0;font-size:13px;margin-left:10px'>map</span>
+<span style='color:#8e8ea0;font-size:13px;margin-left:10px'>string</span>
 <span style='color:#8e8ea0;font-size:13px;margin-left:10px'>可选的</span>
 
 代表最终用户的唯一标识，用来帮助 OpenAI 监控并检测滥用。[了解更多](https://platform.openai.com/docs/guides/safety-best-practices/end-user-ids)
