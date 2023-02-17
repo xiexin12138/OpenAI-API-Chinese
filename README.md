@@ -10,7 +10,9 @@
 - ...
 
 点击阅读：
-- [指引 GUIDES](./%E6%8C%87%E5%BC%95.md)
+- 指引 ( GUIDES )
+  - [代码补全](./%E6%8C%87%E5%BC%95/%E4%BB%A3%E7%A0%81%E8%A1%A5%E5%85%A8.md)
+  - [图像生成](./%E6%8C%87%E5%BC%95/%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90.md)
 - API 参考 ( API REFERENCE )
   - [Node.js](./API%E5%8F%82%E8%80%83/API%E5%8F%82%E8%80%83-node.js.md) 
   - [Python](./API%E5%8F%82%E8%80%83/API%E5%8F%82%E8%80%83-Python.md)
