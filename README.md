@@ -9,4 +9,9 @@
 - Guides > Image generation
 - ...
 
-点击阅读：[官方文档翻译](%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3.md)
+点击阅读：
+- [指引](./%E6%8C%87%E5%BC%95.md)
+- API 参考
+  - [Node.js](./API%E5%8F%82%E8%80%83/API%E5%8F%82%E8%80%83-node.js.md) 
+  - Python
+  - Curl
