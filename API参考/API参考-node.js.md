@@ -1,8 +1,8 @@
-# 补全
+# 补全 ( Completion )
 
 提供一个提示，模型会返回一个或多个预测补全，并且可以返回每个位置上的结果的概率。
 
-## 创建补全 ( Create completion )
+## 创建补全 ( Create Completion )
 
 `POST https://api.openai.com/v1/completions`
 
@@ -170,3 +170,118 @@ temperature采样的另一种替代方案，被称为核采样( nucleus sampling
 <span style='color:#8e8ea0;font-size:13px;margin-left:10px'>可选的</span>
 <span style='color:#8e8ea0;font-size:13px;margin-left:10px'>默认值：1</span>
 
+在服务端侧生成 `best_of` 补全，并返回 "最好" ( 每个 token 都是最高的对数概率 ) 的那个。结果不能是流 ( streamed )。
+
+当同时和 `n` 使用， `best_of` 用来控制候选补全的数量， `n` 指明要有多少个返回， `best_of` 必须大于 `n` 。
+
+**提示**：因为这个参数会生成许多补全，它会大量消耗你的 token 额度。小心使用它并确保你设置了合理的 `max_tokens` 和 `stop` 。
+***
+**logit_bias**
+<span style='color:#8e8ea0;font-size:13px;margin-left:10px'>map</span>
+<span style='color:#8e8ea0;font-size:13px;margin-left:10px'>可选的</span>
+<span style='color:#8e8ea0;font-size:13px;margin-left:10px'>默认值：null</span>
+
+修改指定的 token 在补全中出现的可能性。
+
+接收一个json对象，该对象将 token (由GPT标记器中的 token ID 指定)映射到从-100到100的关联偏差值。你可以使用 [标记器工具](https://platform.openai.com/tokenizer?view=bpe) (对 GPT-2 和 GPT-3 有效) 将文本转换为 token ID。在数学上，偏差被添加到抽样前由模型生成的对数中。确切的影响因模型而异，但 -1 之间 1 的值会减少或增加选中的可能性；像 -100 或 100 的值会导致拒绝或独占在相关 token 的选中。
+
+举个例子，你可以通过 `{"50256": -100}` 来阻止在一开始生成 <|endoftext|> token。
+***
+**user**
+<span style='color:#8e8ea0;font-size:13px;margin-left:10px'>map</span>
+<span style='color:#8e8ea0;font-size:13px;margin-left:10px'>可选的</span>
+
+代表最终用户的唯一标识，用来帮助 OpenAI 监控并检测滥用。[了解更多](https://platform.openai.com/docs/guides/safety-best-practices/end-user-ids)
+
+
+***
+
+<br/>
+<br/>
+<br/>
+<br/>
+
+# 图像 ( Images )
+提供一个提示 和/或 一个输入图像，模型会生成一个新的图像。
+
+相关指引：[图像生成](../%E6%8C%87%E5%BC%95.md)
+***
+## 生成图像 <span style="font-weight: bold;font-size: 12px;line-height: 13px;background: #d2f4d3;color: #1a7f64;padding: 2px 4px 1px;border-radius: 3px;white-space: nowrap;display: inline-block;vertical-align: middle;margin-left: 12px;">测试</span>
+
+`POST https://api.openai.com/v1/images/generations`
+
+通过提供提示生成图像。
+
+```javascript
+// 请求示例
+const { Configuration, OpenAIApi } = require("openai");
+const configuration = new Configuration({
+  apiKey: process.env.OPENAI_API_KEY,
+});
+const openai = new OpenAIApi(configuration);
+const response = await openai.createImage({
+  prompt: "A cute baby sea otter",
+  n: 2,
+  size: "1024x1024",
+});
+
+// 请求参数
+{
+  "prompt": "A cute baby sea otter",
+  "n": 2,
+  "size": "1024x1024"
+}
+
+
+// 响应
+{
+  "created": 1589478378,
+  "data": [
+    {
+      "url": "https://..."
+    },
+    {
+      "url": "https://..."
+    }
+  ]
+}
+
+```
+
+## 请求体
+***
+**prompt**
+<span style='color:#8e8ea0;font-size:13px;margin-left:10px'>string</span>
+<span style='color:red;font-size:13px;margin-left:10px'>必须</span>
+
+想要的图像的文本描述，最大的长度是 1000 个字符。
+***
+**n**
+<span style='color:#8e8ea0;font-size:13px;margin-left:10px'>integer</span>
+<span style='color:#8e8ea0;font-size:13px;margin-left:10px'>可选的</span>
+<span style='color:#8e8ea0;font-size:13px;margin-left:10px'>默认值：1</span>
+
+生成图像的数量，必须介于 1 到 10。
+***
+**size**
+<span style='color:#8e8ea0;font-size:13px;margin-left:10px'>string</span>
+<span style='color:#8e8ea0;font-size:13px;margin-left:10px'>可选的</span>
+<span style='color:#8e8ea0;font-size:13px;margin-left:10px'>默认值：1024x1024</span>
+
+生成图像的尺寸，必须是这其中的一个 `256x256`， `512x512`， 或 `1024x1024`。
+***
+**response_format**
+<span style='color:#8e8ea0;font-size:13px;margin-left:10px'>string</span>
+<span style='color:#8e8ea0;font-size:13px;margin-left:10px'>可选的</span>
+<span style='color:#8e8ea0;font-size:13px;margin-left:10px'>默认值：url</span>
+
+返回生成图像的格式，必须是这其中的一个 `url` 或 `b64_json`。
+***
+**user**
+<span style='color:#8e8ea0;font-size:13px;margin-left:10px'>map</span>
+<span style='color:#8e8ea0;font-size:13px;margin-left:10px'>可选的</span>
+
+代表最终用户的唯一标识，用来帮助 OpenAI 监控并检测滥用。[了解更多](https://platform.openai.com/docs/guides/safety-best-practices/end-user-ids)
+
+
+***
