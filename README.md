@@ -19,6 +19,7 @@
   - ⌛️更新中 [图像生成 ( Image generation )](./%E6%8C%87%E5%BC%95/%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90.md)
   - ...
 - API 参考 ( API REFERENCE )
-  - ✅完成 [补全 ( Completion )](<./API%E5%8F%82%E8%80%83/%E8%A1%A5%E5%85%A8(Completion).md>)
-  - ✅完成 [图像 ( Images )](<./API%E5%8F%82%E8%80%83/%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90(Images).md>)
+  - ✅完成 [介绍 ( Introduction )](<./API参考/介绍(Introduction).md>)
+  - ✅完成 [补全 ( Completion )](<./API参考/补全(Completion).md>)
+  - ✅完成 [图像 ( Images )](<./API参考/图像生成(Images).md>)
   - ...
