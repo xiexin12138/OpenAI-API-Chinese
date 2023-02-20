@@ -195,7 +195,7 @@ temperature 采样的另一种替代方案，被称为核采样( nucleus samplin
 <span style='color:#8e8ea0;font-size:13px;margin-left:10px'>可选的</span>
 <span style='color:#8e8ea0;font-size:13px;margin-left:10px'>默认值：null</span>
 
-最多可以传入 4 个字符串，当模型遇到这些时，API 将停止进一步生成结果。返回的文本将不包含传入的停止字符串。
+最多可以传入 4 个字符串，当模型遇到这些字符串时，API 将停止进一步生成结果。返回的文本将不包含传入的停止字符串。
 
 ---
 
