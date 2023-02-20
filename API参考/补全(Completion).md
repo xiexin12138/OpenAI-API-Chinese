@@ -8,8 +8,36 @@
 
 创建一个用于提供提示和入参的补全。
 
+```bash
+# Curl 请求示例
+curl https://api.openai.com/v1/completions \
+  -H 'Content-Type: application/json' \
+  -H 'Authorization: Bearer YOUR_API_KEY' \
+  -d '{
+  "model": "text-davinci-003",
+  "prompt": "Say this is a test",
+  "max_tokens": 7,
+  "temperature": 0
+}'
+```
+
+```javascript
+// Node.js请求示例
+const { Configuration, OpenAIApi } = require("openai");
+const configuration = new Configuration({
+  apiKey: process.env.OPENAI_API_KEY,
+});
+const openai = new OpenAIApi(configuration);
+const response = await openai.createCompletion({
+  model: "text-davinci-003",
+  prompt: "Say this is a test",
+  max_tokens: 7,
+  temperature: 0,
+});
+```
+
 ```python
-# 请求示例
+# Python 请求示例
 import os
 import openai
 openai.api_key = os.getenv("OPENAI_API_KEY")
@@ -21,8 +49,8 @@ openai.Completion.create(
 )
 ```
 
-```python
-# 请求参数
+```bash
+# 通用请求参数
 {
   "model": "text-davinci-003",
   "prompt": "Say this is a test",
@@ -34,10 +62,8 @@ openai.Completion.create(
   "logprobs": null,
   "stop": "\n"
 }
-```
 
-```python
-# 响应
+# 通用响应内容
 {
   "id": "cmpl-uqkvlQyYK7bGYrRHQ0eXlWi7",
   "object": "text_completion",
@@ -233,7 +259,7 @@ temperature 采样的另一种替代方案，被称为核采样( nucleus samplin
 <br/>
 <br/>
 <br/>
-
+<span id='images'></span>
 # 图像 ( Images )
 
 提供一个提示 和/或 一个输入图像，模型会生成一个新的图像。
@@ -248,8 +274,34 @@ temperature 采样的另一种替代方案，被称为核采样( nucleus samplin
 
 通过提供提示生成图像。
 
+```bash
+# Curl 请求示例
+curl https://api.openai.com/v1/images/generations \
+  -H 'Content-Type: application/json' \
+  -H 'Authorization: Bearer YOUR_API_KEY' \
+  -d '{
+  "prompt": "A cute baby sea otter",
+  "n": 2,
+  "size": "1024x1024"
+}'
+```
+
+```javascript
+// Javascript 请求示例
+const { Configuration, OpenAIApi } = require("openai");
+const configuration = new Configuration({
+  apiKey: process.env.OPENAI_API_KEY,
+});
+const openai = new OpenAIApi(configuration);
+const response = await openai.createImage({
+  prompt: "A cute baby sea otter",
+  n: 2,
+  size: "1024x1024",
+});
+```
+
 ```python
-# 请求示例
+# Python 请求示例
 import os
 import openai
 openai.api_key = os.getenv("OPENAI_API_KEY")
@@ -260,17 +312,15 @@ openai.Image.create(
 )
 ```
 
-```python
-# 请求参数
+```bash
+# 通用请求参数
 {
   "prompt": "A cute baby sea otter",
   "n": 2,
   "size": "1024x1024"
 }
-```
 
-```python
-# 响应
+# 通用响应内容
 {
   "created": 1589478378,
   "data": [
@@ -282,7 +332,6 @@ openai.Image.create(
     }
   ]
 }
-
 ```
 
 ## 请求体
