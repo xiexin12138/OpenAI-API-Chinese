@@ -6,6 +6,8 @@
 
 目前正在更新：Guides > Code complete
 
+如果你有需要我修改顺序，可以提issue，我可以根据情况修改计划
+
 计划更新顺序：
 
 - Guides > Code complete
@@ -23,3 +25,5 @@
   - ✅完成 [补全 ( Completion )](<./API参考/补全(Completion).md>)
   - ✅完成 [图像 ( Images )](<./API参考/图像生成(Images).md>)
   - ...
+- 其他内容(非翻译，个人研究过程中的经验、心得分享)
+  - [OpenAI 账号付款及大陆银行卡被封禁的解决方案](<./其他/OpenAI账号付款及大陆银行卡被封禁的解决方案.md>)
