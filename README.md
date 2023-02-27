@@ -1,6 +1,6 @@
 # OpenAI-API-Chinese
 
-一份 OpenAI 的 API 中文翻译。
+一份 OpenAI 的 API 中文翻译。官方文档原文见：[https://platform.openai.com/docs/introduction](https://platform.openai.com/docs/introduction)
 
 # 持续更新中
 
