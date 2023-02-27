@@ -17,6 +17,7 @@
 计划更新顺序：
 
 - Guides > Image generation
+- API REFERENCE > Edits
 - ...
 
 ## 点击阅读
@@ -28,6 +29,7 @@
   - ✅完成 [介绍 ( Introduction )](<./API参考/介绍(Introduction).md>)
   - ✅完成 [补全 ( Completion )](<./API参考/补全(Completion).md>)
   - ✅完成 [图像 ( Images )](<./API参考/图像生成(Images).md>)
+  - 💤 待开始 [编辑(Edits)](<./API参考/补全(Completion).md>)
   - ...
 
 ## 其他内容(非翻译，个人研究过程中的经验、心得分享)
