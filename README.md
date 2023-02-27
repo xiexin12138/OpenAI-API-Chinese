@@ -1,8 +1,8 @@
 # OpenAI-API-Chinese
 
-一份 OpenAI 的 API 中文翻译。官方文档原文见：[https://platform.openai.com/docs/introduction](https://platform.openai.com/docs/introduction)
-
-# 持续更新中
+- 一份 OpenAI 的 API 中文翻译。
+- 官方文档原文见：[https://platform.openai.com/docs/introduction](https://platform.openai.com/docs/introduction)
+- 如果是大陆用户，图片有可能受DNS污染导致部分图片不可见，可以考虑上国内镜像库查看，我会同步更新 --> [Gitee传送门](https://gitee.com/xiexin344/OpenAI-API-Chinese)
 
 如果条件允许，更建议你使用Postman用自己的API KEY去尝试调用接口，或者自己到OpenAI的在线编辑器上玩玩（在线编辑器不含图像生成的部分，只有文本补全、插入和编辑的部分）
 - [补全](https://platform.openai.com/playground?lang=curl&mode=complete&model=text-davinci-003)
@@ -10,6 +10,7 @@
 - [编辑](https://platform.openai.com/playground?lang=curl&mode=edit)
 
 
+# 更新计划
 目前正在更新：Guides > Image generation
 
 如果你有需要我修改顺序或其他想交流的，可以提issue我们一起交流。
