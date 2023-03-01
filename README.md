@@ -1,8 +1,9 @@
 # OpenAI-API-Chinese
 
 - 一份 OpenAI 的 API 中文翻译。
-- 官方文档原文见：[https://platform.openai.com/docs/introduction](https://platform.openai.com/docs/introduction)
-- 如果是大陆用户，图片有可能受DNS污染导致部分图片不可见，可以考虑上国内镜像库查看，我会同步更新 --> [Gitee传送门](https://gitee.com/xiexin344/OpenAI-API-Chinese)
+- 这里查看[官方文档](https://platform.openai.com/docs/introduction)原文
+- [Github 主库](https://github.com/xiexin12138/OpenAI-API-Chinese)
+- [Gitee 镜像库](https://gitee.com/xiexin344/OpenAI-API-Chinese) ( Github 图片有可能受DNS污染导致部分图片不可见，如果文档看着怪怪的可以考虑上镜像库查看，我每次都会同步更新 )
 
 如果条件允许，更建议你使用Postman用自己的API KEY去尝试调用接口，或者自己到OpenAI的在线编辑器上玩玩（在线编辑器不含图像生成的部分，只有文本补全、插入和编辑的部分）
 - [补全](https://platform.openai.com/playground?lang=curl&mode=complete&model=text-davinci-003)
@@ -34,4 +35,4 @@
   - ...
 
 ## 其他内容(非翻译，个人研究过程中的经验、心得分享)
-  - [OpenAI 账号付款及大陆银行卡被封禁的解决方案](<./其他/OpenAI账号付款及大陆银行卡被封禁的解决方案.md>)
+请到[OpenAI使用经验记录](https://github.com/xiexin12138/OpenAI-use-summary)查看。
