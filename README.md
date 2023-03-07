@@ -12,7 +12,7 @@
 
 
 # 更新计划
-目前正在更新：**API REFERENCE > Chat**
+目前正在更新：**Guides > Chat completion**
 
 如果你有需要我修改顺序或其他想交流的，可以提issue我们一起交流。
 
@@ -20,8 +20,7 @@
 
 计划更新顺序：
 
-- **API REFERENCE > Chat**
-- Guides > Chat completion
+- **Guides > Chat completion**
 - API REFERENCE > Images
 - API REFERENCE > Edits
 - ...
@@ -35,7 +34,7 @@
 - API 参考 ( API REFERENCE )
   - ✅完成 [介绍 ( Introduction )](<./API参考/介绍(Introduction).md>)
   - ✅完成 [补全 ( Completion )](<./API参考/补全(Completion).md>)
-  - ⌛️更新中 [会话 ( Chat )](<./API参考/会话(Chat).md>)
+  - ✅完成 [会话 ( Chat )](<./API参考/会话(Chat).md>)
   - ⌛️更新中 [图像 ( Images )](<./API参考/图像(Images).md>)
   - 💤 待开始 [编辑 ( Edits )](<./API参考/补全(Completion).md>)
   - ...
