@@ -12,7 +12,7 @@
 
 
 # 更新计划
-目前正在更新：Guides > Image generation ( 快更完了 )
+目前正在更新：**Guides > Chat completion**
 
 如果你有需要我修改顺序或其他想交流的，可以提issue我们一起交流。
 
@@ -20,16 +20,16 @@
 
 计划更新顺序：
 
-- Guides > Image generation
-- Guides > Chat completion
+- **Guides > Chat completion**
 - API REFERENCE > Chat
+- API REFERENCE > Images
 - API REFERENCE > Edits
 - ...
 
 ## 点击阅读
 - 指引 ( GUIDES )
   - ✅完成 [代码补全 ( Code Completion )](<./指引/代码补全.md>)
-  - ⌛️更新中 [图像生成 ( Image generation )](<./指引/图像生成.md>)
+  - ✅完成 [图像生成 ( Image generation )](<./指引/图像生成.md>)
   - ...
 - API 参考 ( API REFERENCE )
   - ✅完成 [介绍 ( Introduction )](<./API参考/介绍(Introduction).md>)
