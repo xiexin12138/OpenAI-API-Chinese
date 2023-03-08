@@ -1,4 +1,4 @@
-指引指引指引# OpenAI-API-Chinese
+指引其他API参考指引指引指引# OpenAI-API-Chinese
 
 - 一份 OpenAI 的 API 中文翻译。
 - 这里查看[官方文档](https://platform.openai.com/docs/introduction)原文
@@ -16,7 +16,7 @@
 
 如果你有需要我修改顺序或其他想交流的，可以提issue我们一起交流。
 
-🎉🎉🎉 GPT 3.5 重磅更新！只要 Davinci 价格十分之一的 Turbo 模型，便宜又大碗！已完成更新！
+🎉🎉🎉 GPT 3.5 的会话功能重磅更新！只要 Davinci 价格十分之一的 gpt-3.5-turbo 模型，便宜又大碗！已完成更新！快点击查看[会话指引](</指引/会话补全(Chat completion).md>)和[会话接口文档](</API参考/会话(Chat).md>)。
 
 计划更新顺序：
 
