@@ -12,15 +12,12 @@
 
 
 # 更新计划
-目前正在更新：**Guides > Chat completion**
+目前正在更新：**Guides > Embeddings**
 
 如果你有需要我修改顺序或其他想交流的，可以提issue我们一起交流。
 
-🎉🎉🎉 GPT 3.5 的会话功能重磅更新！只要 Davinci 价格十分之一的 gpt-3.5-turbo 模型，便宜又大碗！已完成更新！快点击查看[会话指引](</指引/会话补全(Chat completion).md>)和[会话接口文档](</API参考/会话(Chat).md>)。
-
 计划更新顺序：
 
-- API REFERENCE > Images
 - GUIDES > Embeddings
 - API REFERENCE > Embeddings
 - API REFERENCE > Edits
@@ -31,7 +28,7 @@
   - ✅完成 [代码补全 ( Code completion )](</指引/代码补全(Code completion).md>)
   - ✅完成 [图像生成 ( Image generation )](</指引/图像生成(Image generation).md>)
   - ✅完成 [会话补全 ( Chat completion )](</指引/会话补全(Chat completion).md>)
-  - 💤 待开始 [嵌入 ( Embeddings )](</指引/嵌入(Embeddings).md>)
+  - ⌛️更新中 [嵌入 ( Embeddings )](</指引/嵌入(Embeddings).md>)
   - 💤 待开始 [微调 ( Fine tuning )](</指引/微调(Fine tuning).md>)
   - 💤 待开始  [调节 ( moderation )](</指引/调节(moderation).md>)
   - ...
@@ -39,8 +36,8 @@
   - ✅完成 [介绍 ( Introduction )](</API参考/介绍(Introduction).md>)
   - ✅完成 [补全 ( Completion )](</API参考/补全(Completion).md>)
   - ✅完成 [会话 ( Chat )](</API参考/会话(Chat).md>)
-  - ⌛️更新中 [图像 ( Images )](</API参考/图像(Images).md>)
-  - 💤 待开始 [嵌入 ( Embeddings )](</API参考/嵌入(Embeddings).md>)
+  - ✅完成 [图像 ( Images )](</API参考/图像(Images).md>)
+  - ⌛️更新中 [嵌入 ( Embeddings )](</API参考/嵌入(Embeddings).md>)
   - 💤 待开始 [编辑 ( Edits )](</API参考/编辑(Edits).md>)
   - 💤 待开始 [微调 ( Fine tuning )](</API参考/微调(Fine-tunes).md>)
   - ...

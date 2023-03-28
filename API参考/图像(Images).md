@@ -195,8 +195,97 @@ openai.Image.create_edit(
 
 **prompt**
 <span style='color:#8e8ea0;font-size:13px;margin-left:10px'>string</span>
+<span style='color:red;font-size:13px;margin-left:10px'>必须</span>
 
 想要的图像的文本描述，最大的长度是 1000 个字符。
+
+---
+
+**n**
+<span style='color:#8e8ea0;font-size:13px;margin-left:10px'>integer</span>
+<span style='color:#8e8ea0;font-size:13px;margin-left:10px'>可选的</span>
+<span style='color:#8e8ea0;font-size:13px;margin-left:10px'>默认值：1</span>
+
+生成图像的数量，必须介于 1 到 10。
+
+---
+
+**size**
+<span style='color:#8e8ea0;font-size:13px;margin-left:10px'>string</span>
+<span style='color:#8e8ea0;font-size:13px;margin-left:10px'>可选的</span>
+<span style='color:#8e8ea0;font-size:13px;margin-left:10px'>默认值：1024x1024</span>
+
+生成图像的尺寸，必须是这其中的一个 `256x256`， `512x512`， 或 `1024x1024`。
+
+---
+
+**response_format**
+<span style='color:#8e8ea0;font-size:13px;margin-left:10px'>string</span>
+<span style='color:#8e8ea0;font-size:13px;margin-left:10px'>可选的</span>
+<span style='color:#8e8ea0;font-size:13px;margin-left:10px'>默认值：url</span>
+
+返回生成图像的格式，必须是这其中的一个 `url` 或 `b64_json`。
+
+---
+
+**user**
+<span style='color:#8e8ea0;font-size:13px;margin-left:10px'>string</span>
+<span style='color:#8e8ea0;font-size:13px;margin-left:10px'>可选的</span>
+
+代表最终用户的唯一标识，用来帮助 OpenAI 监控并检测滥用。[了解更多](https://platform.openai.com/docs/guides/safety-best-practices/end-user-ids)
+
+---
+
+
+
+## 创建图像变化 ( 测试版 )
+
+`POST https://api.openai.com/v1/images/variations`
+
+```bash
+# Curl 请求示例
+curl https://api.openai.com/v1/images/variations \
+  -H "Authorization: Bearer $OPENAI_API_KEY" \
+  -F image="@otter.png" \
+  -F n=2 \
+  -F size="1024x1024"
+```
+```JavaScript
+// Node.js 请求示例
+const { Configuration, OpenAIApi } = require("openai");
+const configuration = new Configuration({
+  apiKey: process.env.OPENAI_API_KEY,
+});
+const openai = new OpenAIApi(configuration);
+const response = await openai.createImageVariation(
+  fs.createReadStream("otter.png"),
+  2,
+  "1024x1024"
+);
+
+```
+```Python
+# Python 请求示例
+import os
+import openai
+openai.api_key = os.getenv("OPENAI_API_KEY")
+openai.Image.create_variation(
+  image=open("otter.png", "rb"),
+  n=2,
+  size="1024x1024"
+)
+
+```
+
+## 请求体
+
+---
+
+**image**
+<span style='color:#8e8ea0;font-size:13px;margin-left:10px'>string</span>
+<span style='color:red;font-size:13px;margin-left:10px'>必须</span>
+
+要进行变化的图像。必须是一个小于 4MB、且为正方形的有效的 PNG 文件
 
 ---
 
@@ -242,9 +331,3 @@ openai.Image.create_edit(
 代表最终用户的唯一标识，用来帮助 OpenAI 监控并检测滥用。[了解更多](https://platform.openai.com/docs/guides/safety-best-practices/end-user-ids)
 
 ---
-
-
-
-## 创建图像变体 ( 测试版 )
-
-`POST https://api.openai.com/v1/images/variations`
