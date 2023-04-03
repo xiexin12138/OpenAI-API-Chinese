@@ -118,9 +118,7 @@ temperature 采样的另一种替代方案，被称为核采样( nucleus samplin
 <span style='color:#8e8ea0;font-size:13px;margin-left:10px'>可选的</span>
 <span style='color:#8e8ea0;font-size:13px;margin-left:10px'>默认值：1</span>
 
-为每个 prompt 生成`n`个补全。
-
-**提示**：因为这个参数会生成许多补全，它会大量消耗你的 token 额度。小心使用它并确保你设置了合理的 `max_tokens` 和 `stop` 。
+为每个输入消息生成多少个聊天补全选项 ( 译者注：即在返回的参数 choices 中会返回多`n` 个)。
 
 ---
 
@@ -129,7 +127,7 @@ temperature 采样的另一种替代方案，被称为核采样( nucleus samplin
 <span style='color:#8e8ea0;font-size:13px;margin-left:10px'>可选的</span>
 <span style='color:#8e8ea0;font-size:13px;margin-left:10px'>默认值：false</span>
 
-是否逐步返回部分结果。如果设置为 true，token 将会在可用的时候作为纯数据通过 sse ([server-sent events](https://developer.mozilla.org/zh-CN/docs/Web/API/Server-sent_events/Using_server-sent_events)) 发送，直到数据流被 `data: [DONE]` 消息结束。
+如果设置了，将会一点点发送增量的消息，就像在 ChatGPT 中一样。 当输出结果时，返回的内容将作为[服务端推送事件]((https://developer.mozilla.org/zh-CN/docs/Web/API/Server-sent_events/Using_server-sent_events))的数据发送，流将通过`data: [DONE]`表明消息结束。请参阅 OpenAI Cookbook 查看[示例代码](https://github.com/openai/openai-cookbook/blob/main/examples/How_to_stream_completions.ipynb)。
 
 ---
 
@@ -138,18 +136,18 @@ temperature 采样的另一种替代方案，被称为核采样( nucleus samplin
 <span style='color:#8e8ea0;font-size:13px;margin-left:10px'>可选的</span>
 <span style='color:#8e8ea0;font-size:13px;margin-left:10px'>默认值：null</span>
 
-最多可以传入 4 个字符串，当模型遇到这些字符串时，API 将停止进一步生成结果。返回的文本将不包含传入的停止字符串。
+最多可以传入 4 个字符串，当模型遇到这些字符串时，API 将停止进一步生成结果。
 
 ---
 
 **max_tokens**
 <span style='color:#8e8ea0;font-size:13px;margin-left:10px'>integer</span>
 <span style='color:#8e8ea0;font-size:13px;margin-left:10px'>可选的</span>
-<span style='color:#8e8ea0;font-size:13px;margin-left:10px'>默认值：16</span>
+<span style='color:#8e8ea0;font-size:13px;margin-left:10px'>默认值：正无穷</span>
 
-用于生成补全的最大[tokens](https://platform.openai.com/tokenizer)数量。
+聊天完成时生成的最大[tokens](https://platform.openai.com/tokenizer)数量。
 
-你的提示 ( prompt ) 数量加上 `max_tokens` 不能超过模型的上下文长度。大多数模型的上下文长度为 2048 个令牌(除了最新的模型，它支持 4096 个)。
+输入的 token 和生成的 token 的总长度受模型上下文长度的限制。
 
 ---
 
@@ -182,9 +180,7 @@ temperature 采样的另一种替代方案，被称为核采样( nucleus samplin
 
 修改指定的 token 在补全中出现的可能性。
 
-接收一个 json 对象，该对象将 token (由 GPT 标记器中的 token ID 指定)映射到从-100 到 100 的关联偏差值。你可以使用 [标记器工具](https://platform.openai.com/tokenizer?view=bpe) (对 GPT-2 和 GPT-3 有效) 将文本转换为 token ID。在数学上，偏差被添加到抽样前由模型生成的对数中。确切的影响因模型而异，但 -1 之间 1 的值会减少或增加选中的可能性；像 -100 或 100 的值会导致拒绝或独占在相关 token 的选中。
-
-举个例子，你可以通过 `{"50256": -100}` 来阻止在一开始生成 <|endoftext|> token。
+接受一个json对象，该对象将 tokens ( 由标记器 ( tokenizer ) 中的 token ID 指定 ) 映射到从-100到100的关联偏差值。在数学上，模型生成样本前会将偏差添加到对数中。其精确性会因模型而异，但在 -1 到 1 的范围内的值应该会减少或增加选择的可能性；像 -100 或 100 这样的值应该会导致相关 token 被禁止选择或只能选择相关 token。
 
 ---
 
