@@ -193,6 +193,14 @@ openai.Image.create_edit(
 
 ---
 
+**mask**
+<span style='color:#8e8ea0;font-size:13px;margin-left:10px'>string</span>
+<span style='color:#8e8ea0;font-size:13px;margin-left:10px'>可选的</span>
+
+附加的图像中完全透明的区域（例如 alpha 为零的区域）用来指示图像应该被编辑的位置。必须是有效的 PNG 文件，大小不超过 4MB，并且具有与图像相同的尺寸
+
+---
+
 **prompt**
 <span style='color:#8e8ea0;font-size:13px;margin-left:10px'>string</span>
 <span style='color:red;font-size:13px;margin-left:10px'>必须</span>
@@ -286,14 +294,6 @@ openai.Image.create_variation(
 <span style='color:red;font-size:13px;margin-left:10px'>必须</span>
 
 要进行变化的图像。必须是一个小于 4MB、且为正方形的有效的 PNG 文件
-
----
-
-**prompt**
-<span style='color:#8e8ea0;font-size:13px;margin-left:10px'>string</span>
-<span style='color:red;font-size:13px;margin-left:10px'>必须</span>
-
-想要的图像的文本描述，最大的长度是 1000 个字符。
 
 ---
 
